@@ -8,3 +8,30 @@ aws sns subscribe \
     --topic-arn "arn:aws:sns:ca-central-1:891377298769:billing-alarm"\
     --protocol email\
     --notification-endpoint yykdigital@hotmail.com
+
+
+
+# Run these 2 Commands:
+$ export FRONTEND_URL="*"
+
+$ export BACKEND_URL="*"
+
+# Finally run this Command:
+# This will allowed you to run on the port=4567
+python3 -m flask run --host=0.0.0.0 --port=4567
+
+# Code Syntax:
+# Run this in the URL and you will get the result or output of the code:
+https://4567-justlovetoc-awsbootcamp-53yxrvnhfvn.ws-us114.gitpod.io/api/activities/home
+
+
+# Code Syntax if it is Successful Request of 200, 
+# this is the HTTP Code of Successful Request:
+192.168.190.10 - -  "GET /api/activities/home HTTP/1.1" 200
+
+# Build the Docker Container
+docker build -t backend-flask ./backend-flask
+
+# Run the Docker Container Here
+docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
+
